@@ -1,0 +1,16 @@
+<div class="height">
+  <div class="diplay-type">
+    <app-date-picker
+      [disabled]="false"
+      [selectedValue]="today"
+      [min]="minDate"
+      [max]="maxDate"
+      [yearLimit]="year"
+      (SelectedDate)="dateSelected($event)"
+    ></app-date-picker>
+  </div>
+  <h2 class="d-flex justify-content-center">
+    Selected Value {{ selectedValue | date : "MMM dd yyyy hh:mm a" }}
+  </h2>
+</div>
+<!-- <router-outlet></router-outlet> -->
