@@ -12,7 +12,23 @@
 .set {
   position: relative;
 }
-
+.prevDateDisable {
+  // display: none;
+  opacity: 0 !important;
+}
+.normalDates {
+  // border: 0.5px solid gray;
+  background: #f4f2f2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 2px;
+  border-radius: 2px;
+}
+.selectedDate {
+  // border: 1px solid black;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .calendarheader {
   border-radius: 5px;
   height: 2rem;
@@ -26,8 +42,8 @@
 .calendar {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #d6f1ff;
-  width: 19rem;
-  height: 18rem;
+  width: 21rem;
+  height: 19rem;
   padding: 0.5rem;
   z-index: 999;
 }
@@ -75,7 +91,7 @@
 
 .weekdays div {
   font-size: 1.1rem;
-  width: calc((18rem / 7) - 0.01rem);
+  width: calc((21rem / 7) - 0.01rem);
   text-align: center;
   box-sizing: border-box;
 }
@@ -89,6 +105,7 @@
   box-sizing: border-box;
   width: calc((18rem / 7) - 0.01rem);
   text-align: center;
+  font-weight: 600;
   height: 2rem;
   display: flex;
   justify-content: center;
@@ -101,11 +118,18 @@
 }
 
 .days
-  div:hover:not(.today, .next-date, .prev-date, .disabled, .target, .currentDate) {
+  div:hover:not(
+    .today,
+    .next-date,
+    .prev-date,
+    .disabled,
+    .target,
+    .currentDate
+  ) {
   border: 0.1rem solid #777;
   border-radius: 10%;
 }
-.days div:hover:not(.next-date, .prev-date,.disabled) {
+.days div:hover:not(.next-date, .prev-date, .disabled) {
   cursor: pointer;
 }
 
