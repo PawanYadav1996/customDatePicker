@@ -5,7 +5,7 @@
         [disabled]="this?.disabled"
         [readonly]="true"
         placeholder="{{ placeholder }}"
-        [value]="displayDate?.toDateString() | date : 'dd/MM/yyyy'"
+        [value]="displayDate?.toDateString() | date : 'dd-MM-YYYY'"
         class="calendar-input"
         type="text"
       />
@@ -27,10 +27,11 @@
         </svg>
       </div>
     </div>
+    <!-- btn-light-color -->
     <div
       *ngIf="show"
       #cally
-      class="calendar btn-light-color"
+      class="calendar "
       [ngClass]="dropUpOrDown()"
     >
       <div class="calendarheader btn-color">
@@ -109,10 +110,11 @@
       <div class="days">
         <div
           (click)="dateClicked(day)"
+          class="normalDates"
           [ngClass]="{
-            'prev-date': day.type == 'prev',
+            'prev-date prevDateDisable': day.type == 'prev',
             'next-date': day.type == 'next',
-            'btn-color': day.type == 'target',
+            'btn-color selectedDate': day.type == 'target',
             disabled: day.disabled == true,
             currentDate:
               this.currentDateOrignal.getDate() == day.day &&
