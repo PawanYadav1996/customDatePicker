@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/customDatePicker",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

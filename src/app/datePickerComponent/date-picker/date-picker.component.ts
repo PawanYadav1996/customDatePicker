@@ -355,6 +355,12 @@ export class DatePickerComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   // Position to render the calendar accordingly
+  /**
+   * This function determines whether a dropdown should appear above or below a calendar input based on
+   * the available space on the screen.
+   * @returns either the string "dropup" or "dropdown" based on whether the dropdown should be
+   * displayed above or below the calendar input element.
+   */
   dropUpOrDown() {
     let dropdownHeight = 288 + 42;
     let windowHeight = this.window.innerHeight;
